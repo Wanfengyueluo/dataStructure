@@ -2,12 +2,14 @@
 * @Author: WanFeng
 * @Date:   2019-03-31 23:02:55
 * @Last Modified by:   WanFeng
-* @Last Modified time: 2019-04-01 00:37:49
+* @Last Modified time: 2019-04-01 22:38:51
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>//C99
+#include <stdbool.h>//C99添加bool类型
 
+//线性结构的数组实现
+//未完成：数组的自增长因子，当分配的内存达到上限再次添加数据时数组自动申请内存
 typedef struct ArrayList
 {
     int *pBase;//存储数组的第一个元素的地址
@@ -15,23 +17,21 @@ typedef struct ArrayList
     int cnt;//当前数组有效元素的个数
 } Arr;
 
-void init_arr(Arr *pArr, int length);
-bool append_arr(Arr *pArr, int value);
-bool insert_arr(Arr *pArr, int pos, int value);//pso的值从1开始
-bool delete_arr(Arr *pArr, int pos, int *pValue);
-int get();
-bool is_empty(Arr *pArr);
-bool is_full(Arr *pArr);
-void sort_arr(Arr *pArr);
-void show_arr(Arr *pArr);
-void inversion_arr(Arr *pArr);
+void init_arr(Arr *pArr, int length);//数组初始化
+bool append_arr(Arr *pArr, int value);//数组追加数据
+bool insert_arr(Arr *pArr, int pos, int value);//向数组中插入一个元素，pos的值从1开始
+bool delete_arr(Arr *pArr, int pos, int *pValue);//删除数组中的一个元素
+bool is_empty(Arr *pArr);//判断数组是否为空
+bool is_full(Arr *pArr);//判断数组是否为满
+void sort_arr(Arr *pArr);//数组排序
+void show_arr(Arr *pArr);//打印数组
+void inversion_arr(Arr *pArr);//数组翻转
 
 int main(int argc, char const *argv[])
 {
     Arr arr;
     int value;
     init_arr(&arr, 100);
-    show_arr(&arr);
     append_arr(&arr, 1);
     append_arr(&arr, 2);
     append_arr(&arr, 3);
@@ -45,8 +45,7 @@ int main(int argc, char const *argv[])
     append_arr(&arr, 23);
     append_arr(&arr, 24);
     show_arr(&arr);
-    /*
-    show_arr(&arr);
+
     insert_arr(&arr, 1, 99);
     show_arr(&arr);
     insert_arr(&arr, 6, 100);
@@ -55,19 +54,15 @@ int main(int argc, char const *argv[])
     {
         show_arr(&arr);
     }
-    if(insert_arr(&arr, 8, 998))
-    {
-        show_arr(&arr);
-    }
-    */
-    /*
+
+    //删除第一个元素
     if(delete_arr(&arr, 1, &value))
     {
         printf("删除成功\n");
         printf("您删除的元素是%d\n", value);
     }
     show_arr(&arr);
-    */
+
     inversion_arr(&arr);
     show_arr(&arr);
 
