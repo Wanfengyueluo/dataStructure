@@ -2,13 +2,13 @@
 * @Author: WanFeng
 * @Date:   2019-03-31 23:02:55
 * @Last Modified by:   WanFeng
-* @Last Modified time: 2019-04-01 22:38:51
+* @Last Modified time: 2019-04-02 20:26:55
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>//C99添加bool类型
 
-//线性结构的数组实现
+//线性结构的数组实现 顺序存储
 //未完成：数组的自增长因子，当分配的内存达到上限再次添加数据时数组自动申请内存
 typedef struct ArrayList
 {
@@ -190,7 +190,7 @@ void inversion_arr(Arr *pArr)
 }
 void sort_arr(Arr *pArr)
 {
-    for (int i = 0; i < pArr->cnt; ++i)
+    for (int i = 0; i < pArr->cnt-1; ++i)
     {
         for (int j = i + 1; j < pArr->cnt; ++j)
         {
