@@ -21,4 +21,4 @@ int main(int argc, char const *argv[])
     return 0;
 }
 ```
-
+***前期代码是跟着郝斌老师的数据结构实现的，后一部分按照王道数据结构进行实现***
