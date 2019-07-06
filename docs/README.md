@@ -22,3 +22,12 @@ int main(int argc, char const *argv[])
 }
 ```
 ***前期代码是跟着郝斌老师的数据结构实现的，后一部分按照王道数据结构进行实现***
+
+##### docsify文档地址[docsify](https://docsify.js.org)
+
+##### 开启本地服务为：
+
+```bash
+docsify serve docs
+```
+
