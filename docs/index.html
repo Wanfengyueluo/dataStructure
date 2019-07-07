@@ -1,21 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>the Note of Data Structure</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
+
 <body>
   <div id="app">loading...</div>
   <script>
     window.$docsify = {
+      homepage: 'start.md',
       name: 'Wan Feng',
-      repo: 'https://github.com/Wanfengyueluo/dataStructure'
+      repo: 'https://github.com/Wanfengyueluo/dataStructure',
+      loadSidebar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      search: 'auto', // 默认值
+      search: [
+        '/', // => /README.md
+        '/list', // => /guide.md
+      ],
+
+      // 完整配置参数
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto', // or 'auto'
+        placeholder: 'Type to search',
+
+        // 支持本地化
+        placeholder: {
+          '/': 'Search',
+        },
+        // 支持本地化
+        noData: {
+          '/': 'No results!',
+        },
+        // 搜索标题的最大程级, 1 - 6
+        depth: 6
+      },
+      subMaxLevel: 4,
+      coverpage: true,
+      auto2top: true,
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      plugins: [
+        function (hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span><a href="https://github.com/Wanfengyueluo">wan feng</a> &copy;2019.</span>',
+            '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
+            '</footer>'
+          ].join('')
+
+          hook.afterEach(function (html) {
+            return html + footer
+          })
+        }
+      ]
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-c.js"></script>
 </body>
+
 </html>
