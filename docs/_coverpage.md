@@ -1,12 +1,7 @@
 <!-- ![logo](_media/coverage.jpg) -->
 
-# docsify
+# a note of data structure
 
-> A magical documentation site generator.
 
-* Simple and lightweight (~12kb gzipped)
-* Multiple themes
-* Not build static html files
-
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/Wanfengyueluo/dataStructure/)
 [Get Started](/start)
